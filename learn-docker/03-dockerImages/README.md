@@ -6,6 +6,10 @@
 - estas imagenes se crean usando una dockerFile
   <img src="../img/dockerImage.png" width="300" height="200">
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 ## comandos
 
 1. ver las imagenes que tengo instaladas
