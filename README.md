@@ -6,6 +6,7 @@ learn-docker
 learn-networking
 learn-ssh
 
+```text
 DevOps-and-servers/
 │
 ├── README.md
@@ -56,3 +57,4 @@ DevOps-and-servers/
     ├── backups/
     ├── deploy/
     └── automation/
+```
