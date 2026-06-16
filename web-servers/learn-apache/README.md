@@ -1,10 +1,10 @@
-# 📘 Apache HTTP Server en Arch Linux
+#  Apache HTTP Server en Arch Linux
 
 ## VirtualHosts, HTTPS/SSL y Análisis Básico de Seguridad
 
 ---
 
-# 🧠 Objetivo del laboratorio
+#  Objetivo del laboratorio
 
 Aprender cómo funciona un servidor web real utilizando:
 
@@ -23,7 +23,7 @@ Aprender cómo funciona un servidor web real utilizando:
 
 ---
 
-# 🌐 1. ¿Qué es Apache?
+# 1. ¿Qué es Apache?
 
 Apache HTTP Server es un servidor web que:
 
@@ -45,7 +45,7 @@ Apache funciona como un proceso escuchando conexiones en:
 
 ---
 
-# 🐧 2. Instalación de Apache en Arch Linux
+#  2. Instalación de Apache en Arch Linux
 
 ## Instalar Apache
 
@@ -55,7 +55,7 @@ sudo pacman -S apache
 
 ---
 
-# ⚙️ 3. Manejo del servicio
+#  3. Manejo del servicio
 
 ## Iniciar Apache
 
@@ -83,7 +83,7 @@ sudo systemctl restart httpd
 
 ---
 
-# 🔎 4. Verificar funcionamiento
+#  4. Verificar funcionamiento
 
 Abrir en navegador:
 
@@ -95,7 +95,7 @@ Si carga una página → Apache está funcionando correctamente.
 
 ---
 
-# 📁 5. Estructura importante de Apache en Arch Linux
+#  5. Estructura importante de Apache en Arch Linux
 
 |Ruta|Función|
 |---|---|
@@ -107,7 +107,7 @@ Si carga una página → Apache está funcionando correctamente.
 
 ---
 
-# 🧠 6. ¿Qué es un VirtualHost?
+#  6. ¿Qué es un VirtualHost?
 
 Un VirtualHost permite alojar múltiples sitios web en un mismo servidor.
 
@@ -124,7 +124,7 @@ Todo funcionando en una sola instancia de Apache.
 
 ---
 
-# 🔧 7. Habilitar VirtualHosts
+# 7. Habilitar VirtualHosts
 
 Editar:
 
@@ -146,7 +146,7 @@ Include conf/extra/httpd-vhosts.conf
 
 ---
 
-# 🌍 8. Configuración de dominio local
+# 8. Configuración de dominio local
 
 Editar:
 
@@ -164,7 +164,7 @@ Esto permite que Linux resuelva el dominio localmente.
 
 ---
 
-# 📂 9. Crear sitio web
+#  9. Crear sitio web
 
 ## Crear carpeta del sitio
 
@@ -187,7 +187,7 @@ Ejemplo:
 
 ---
 
-# 🏗️ 10. Configuración básica del VirtualHost
+#  10. Configuración básica del VirtualHost
 
 Editar:
 
@@ -209,7 +209,7 @@ Agregar:
 
 ---
 
-# 🔍 11. Explicación de la configuración
+#  11. Explicación de la configuración
 
 |Directiva|Función|
 |---|---|
@@ -221,7 +221,7 @@ Agregar:
 
 ---
 
-# ✅ 12. Verificar configuración Apache
+#  12. Verificar configuración Apache
 
 ```bash
 sudo apachectl configtest
@@ -235,7 +235,7 @@ Syntax OK
 
 ---
 
-# 🔄 13. Reiniciar Apache
+#  13. Reiniciar Apache
 
 ```bash
 sudo systemctl restart httpd
@@ -243,7 +243,7 @@ sudo systemctl restart httpd
 
 ---
 
-# 🌐 14. Acceder al sitio
+#  14. Acceder al sitio
 
 Abrir:
 
@@ -253,7 +253,7 @@ http://miblog.local
 
 ---
 
-# 🔒 15. ¿Qué es HTTPS?
+#  15. ¿Qué es HTTPS?
 
 HTTPS es HTTP cifrado mediante SSL/TLS.
 
@@ -276,7 +276,7 @@ HTTPS trabaja en:
 
 ---
 
-# 🧠 16. Conceptos importantes de SSL/TLS
+#  16. Conceptos importantes de SSL/TLS
 
 |Concepto|Explicación|
 |---|---|
@@ -288,7 +288,7 @@ HTTPS trabaja en:
 
 ---
 
-# ⚙️ 17. Activar módulos SSL en Apache
+#  17. Activar módulos SSL en Apache
 
 Editar:
 
@@ -310,7 +310,7 @@ Los módulos deben cargarse antes del `Include`.
 
 ---
 
-# ❌ Error encontrado durante la práctica
+#  Error encontrado durante la práctica
 
 ## Error:
 
@@ -334,7 +334,7 @@ LoadModule socache_shmcb_module modules/mod_socache_shmcb.so
 
 ---
 
-# 🔑 18. Crear certificado SSL autofirmado
+#  18. Crear certificado SSL autofirmado
 
 ## Comando
 
@@ -346,7 +346,7 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 
 ---
 
-# 🧠 19. Explicación del comando OpenSSL
+#  19. Explicación del comando OpenSSL
 
 |Parte|Función|
 |---|---|
@@ -361,7 +361,7 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 
 ---
 
-# ⚠️ 20. Common Name (CN)
+#  20. Common Name (CN)
 
 Durante la creación del certificado:
 
@@ -377,7 +377,7 @@ miblog.local
 
 ---
 
-# 🧠 21. Relación dominio y certificado
+#  21. Relación dominio y certificado
 
 El certificado “dice”:
 
@@ -391,7 +391,7 @@ Si el navegador entra usando otro nombre:
 
 ---
 
-# 🔒 22. Configuración HTTPS del VirtualHost
+#  22. Configuración HTTPS del VirtualHost
 
 Editar:
 
@@ -424,7 +424,7 @@ Agregar:
 
 ---
 
-# 🔁 23. Verificar configuración nuevamente
+#  23. Verificar configuración nuevamente
 
 ```bash
 sudo apachectl configtest
@@ -432,7 +432,7 @@ sudo apachectl configtest
 
 ---
 
-# 🔄 24. Reiniciar Apache
+#  24. Reiniciar Apache
 
 ```bash
 sudo systemctl restart httpd
@@ -440,7 +440,7 @@ sudo systemctl restart httpd
 
 ---
 
-# 🌍 25. Acceder usando HTTPS
+#  25. Acceder usando HTTPS
 
 ```text
 https://miblog.local
@@ -448,7 +448,7 @@ https://miblog.local
 
 ---
 
-# ⚠️ 26. ¿Por qué aparece “No seguro”?
+# 26. ¿Por qué aparece “No seguro”?
 
 Porque el certificado es:
 
@@ -465,7 +465,7 @@ El navegador:
 
 ---
 
-# 🧠 27. Diferencia importante
+#  27. Diferencia importante
 
 |Tipo|Cifrado|Confianza|
 |---|---|---|
@@ -496,7 +496,7 @@ Permite ver:
 
 ---
 
-# ⚠️ 29. Ver errores
+#  29. Ver errores
 
 ```bash
 tail -f /var/log/httpd/error.log
@@ -504,7 +504,7 @@ tail -f /var/log/httpd/error.log
 
 ---
 
-# 💀 30. Simular accesos sospechosos
+#  30. Simular accesos sospechosos
 
 ```bash
 curl -k https://miblog.local/admin
@@ -520,7 +520,7 @@ Esto genera registros similares a bots reales buscando vulnerabilidades.
 
 ---
 
-# 🔍 31. Buscar errores 404
+#  31. Buscar errores 404
 
 ```bash
 grep "404" /var/log/httpd/miblog-ssl-access.log
@@ -537,7 +537,7 @@ Permite detectar:
 
 ---
 
-# 🌐 32. Escaneo básico con Nmap
+#  32. Escaneo básico con Nmap
 
 ```bash
 nmap -sV miblog.local
@@ -554,7 +554,7 @@ Permite detectar:
 
 ---
 
-# 📡 33. Análisis de tráfico de red
+#  33. Análisis de tráfico de red
 
 ## Ver tráfico HTTPS
 
@@ -571,7 +571,7 @@ Con HTTPS:
 
 ---
 
-# 🧠 34. Diferencia entre HTTP y HTTPS
+#  34. Diferencia entre HTTP y HTTPS
 
 |HTTP|HTTPS|
 |---|---|
@@ -581,7 +581,7 @@ Con HTTPS:
 
 ---
 
-# 🎯 35. Lo aprendido realmente
+#  35. Lo aprendido realmente
 
 ## Administración
 
@@ -619,7 +619,7 @@ Con HTTPS:
 
 ---
 
-# 🚀 36. Próxima etapa: NGINX
+#  36. Próxima etapa: NGINX
 
 Siguientes temas:
 
